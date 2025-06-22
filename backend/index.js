@@ -66,6 +66,7 @@ app.post("/sendemail", function (req, res) {
                 }
                 resolve("Success")
             } catch (error) {
+                console.log(error)
                 reject("Failed")
             }
         }).then(function () {
