@@ -11,7 +11,7 @@ app.use(cors())
 
 const nodemailer = require("nodemailer");
 
-mongoose.connect("mongodb+srv://Hema:12345@cluster0.coatkch.mongodb.net/passkeyretryWrites=true&w=majority&appName=Cluster0").then(function () {
+mongoose.connect("mongodb+srv://Hema:12345@cluster0.coatkch.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0").then(function () {
         console.log("DB connected")
         console.dir ( ip.address() );
 
