@@ -36,10 +36,12 @@ const credentials = mongoose.model("credential", {}, "bulkmail")
 app.post("/sendemail", function (req, res) {
 
     let msg = req.body.msg
-let email = req.body.emailList
+    let email = req.body.emailList
+
+    console.log(msg, email)
 
     credentials.find().then(function (data) {
-        console.log(data)
+        console.log('credentials', data)
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
@@ -51,6 +53,8 @@ let email = req.body.emailList
         new Promise(async function (resolve, reject) {
             try {
                 for (var i = 0; i < email.length; i++) {
+                    console.log("Before Email sent" )
+
                     await transporter.sendMail({
                         from: "archuhema12@gmail.com",
                         to: email[i],
