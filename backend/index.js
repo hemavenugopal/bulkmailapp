@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
 // require("dotenv").config();
+var ip = require("ip");
 
 const app = express()
 
@@ -12,8 +13,13 @@ const nodemailer = require("nodemailer");
 
 mongoose.connect("mongodb+srv://Hema:12345@cluster0.coatkch.mongodb.net/passkeyretryWrites=true&w=majority&appName=Cluster0").then(function () {
         console.log("DB connected")
+        console.dir ( ip.address() );
+
     }).catch(function (err) {
+        console.dir ( ip.address() );
+
         console.log("Failed to DB")
+
         console.log(err)
     })
 
