@@ -12,8 +12,9 @@ const nodemailer = require("nodemailer");
 
 mongoose.connect("mongodb+srv://Hema:12345@cluster0.coatkch.mongodb.net/passkeyretryWrites=true&w=majority&appName=Cluster0").then(function () {
         console.log("DB connected")
-    }).catch(function () {
+    }).catch(function (err) {
         console.log("Failed to DB")
+        console.log(err)
     })
 
 const credentials = mongoose.model("credential", {}, "bulkmail")
