@@ -12,6 +12,7 @@ function App() {
   }
   function send(){
     setStatus(true)
+    // axios.post("http://localhost:5000/sendemail",{msg:msg,emailList:emailList})
     axios.post("https://bulkmailapp-backend-ozqn.onrender.com/sendemail",{msg:msg,emailList:emailList})
     .then(function(data){
       if(data.data === true){
